@@ -2,6 +2,7 @@
 import { LitElement, html, css } from 'lit';
 
 class StockFetcher extends LitElement {
+
   static get properties() {
     return {
       dealerId: { type: String, attribute: 'dealer-id' },
@@ -142,13 +143,13 @@ class StockFetcher extends LitElement {
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
-  	if (name === 'dealer-id' && newValue) {
-    	this.dealerId = newValue;
-    	this.fetchDataIfNeeded(); // Fetch data when dealer-id changes
-  	} else if (name === 'primary-col') {
-    	this.primaryCol = newValue;
-    	this.style.setProperty('--primaryCol', newValue); // Update CSS custom property when primary-col changes
-  	}
+    if (name === 'dealer-id' && newValue) {
+      this.dealerId = newValue;
+      this.fetchDataIfNeeded(); // Fetch data when dealer-id changes
+    } else if (name === 'primary-col') {
+      this.primaryCol = newValue;
+      this.style.setProperty('--primaryCol', newValue); // Update CSS custom property when primary-col changes
+    }
   }
 }
 
