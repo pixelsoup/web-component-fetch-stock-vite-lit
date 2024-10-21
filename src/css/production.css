@@ -1,0 +1,131 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("https://s3-ap-southeast-2.amazonaws.com/assets.i-motor.com.au/webfonts/Roboto-Regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Roboto Bold";
+  src: url("https://s3-ap-southeast-2.amazonaws.com/assets.i-motor.com.au/webfonts/Roboto-Bold.woff2") format("woff2");
+}
+:root {
+  --fontRegular: "Roboto", sans-serif;
+  --fontBold: "Roboto Bold", sans-serif;
+  --white: #fff;
+  --black: #000;
+  --black5: #f2f2f2;
+  --blue: #428fbd;
+  --red: #ff5722;
+  --purple: #734f79;
+  --primaryColour: purple;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  width: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: var(--fontRegular);
+  line-height: 1.5;
+  margin: 0;
+  background-color: var(--black5);
+  overflow: auto;
+  color: var(--black);
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+strong {
+  font-family: var(--fontBold);
+}
+
+hr {
+  margin-block: 24px;
+}
+
+.container {
+  max-width: 1280px;
+  margin-inline: auto;
+}
+
+.containerPadded {
+  max-width: 1280px;
+  margin-inline: auto;
+  padding: 1em;
+}
+
+.preHightlighted {
+  background-color: #26292E;
+  color: #0088FF;
+  font-style: italic;
+  padding: 10px;
+  white-space: pre-line;
+}
+
+.pageHeadingWrapper {
+  padding-left: 20px;
+}
+.pageHeadingWrapper * + * {
+  margin-top: 5px;
+}
+
+.pageHeading {
+  font-size: 30px;
+  margin: 0;
+}
+
+.pageHeadingList {
+  padding: 0;
+  margin-bottom: 0;
+}
+
+.pageHeadingLink {
+  font-size: 16px;
+  text-decoration: none;
+  color: var(--blue);
+  display: block;
+}
+
+.wordCount {
+  font-size: 24px;
+  margin-block-start: 24px;
+}

@@ -1,0 +1,45 @@
+:host {
+  --primaryCol: gray; /* Default color */
+}
+
+.numberOfStock {
+  color: var(--numberStockCol);
+}
+
+.stockItemsWrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+}
+
+.stockItem {
+  background-color: white;
+  border: 1px solid #ddd;
+}
+
+.stockItemHeading {
+  font-size: 14px;
+  color: white;
+  background-color: var(--primaryCol); /* Use custom property */
+  margin-block: 0;
+  padding: 5px;
+}
+
+.stockItemImage {
+    display: block;
+    width: 100%;
+}
+
+.stockFeatures {
+  background-color: white;
+  padding: 10px;
+}
+
+.stockFeatureItem {
+  font-size: 12px;
+  margin-block: 0;
+}
+
+strong {
+  font-family: var(--fontBold);
+}
