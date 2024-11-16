@@ -16,6 +16,7 @@ class StockFetcher extends LitElement {
     this.dealerId = '';
     this.primaryCol = '';
     this.stockData = []; // Initialize stockData
+    console.log('StockFetcher component initialized');
   }
 
   static styles = css`
@@ -68,21 +69,26 @@ class StockFetcher extends LitElement {
 
   async connectedCallback() {
     super.connectedCallback();
+    console.log('Component connected to the DOM');
     await this.fetchDataIfNeeded(); // Fetch data if dealerId is set
   }
 
   async fetchDataIfNeeded() {
+    console.log(`Fetching data for dealerId: ${this.dealerId}`);
     if (this.dealerId) {
       const baseUrl = 'https://s3.ap-southeast-2.amazonaws.com/stock.publish';
       const url = `${baseUrl}/dealer_${this.dealerId}/stock.json`; // Construct the full URL
 
       try {
         const data = await this.fetchData(url); // Fetch data using the constructed URL
+        console.log('Fetched data:', data);
         this.renderData(data); // Render the fetched data
       } catch (error) {
+        console.error('Error fetching data:', error.message);
         this.renderData({ message: error.message }); // Handle errors during fetch
       }
     } else {
+      console.warn('Dealer ID not provided.');
       this.renderData({ message: 'Dealer ID not provided.' }); // Handle missing attribute
     }
   }
@@ -135,6 +141,7 @@ class StockFetcher extends LitElement {
     return html`
       <h3 class="number-of-stock">${this.stockData.length} Stock Items</h3>
       <div class="stockItemsWrapper">
+        ${console.log('hello - logging in render method like jsx')}
         ${Array.isArray(this.stockData)
           ? this.stockData.map(stock => this.createStockItem(stock))
           : html`<p>${this.stockData?.message || 'No data available.'}</p>`}
